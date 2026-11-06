@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛在线观看-大赛直播在线观看_每日热门大赛合集</title>
+<meta name="description" content="每日大赛在线观看，聚合每日热门大赛的直播与回放入口，按门类与热度浏览当日大赛内容，查看开播时间与赛程要点，快速找到想看的大赛。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a2b'/%3E%3Cpath d='M20 18h24v6H20zm0 11h24v6H20zm0 11h14v6H20z' fill='%23ff7a3d'/%3E%3Ccircle cx='45' cy='46' r='8' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#111a2b;
+  --ink-soft:#2c3850;
+  --paper:#f6f4ef;
+  --card:#ffffff;
+  --line:#e2dcd2;
+  --accent:#ff5b2e;
+  --accent-soft:#ffe7dd;
+  --gold:#f2b630;
+  --radius:16px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto;}
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,244,239,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;gap:28px;
+  min-height:68px;flex-wrap:wrap;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  font-weight:800;font-size:17px;letter-spacing:.2px;
+  color:var(--ink);
+}
+.brand .mark{
+  width:34px;height:34px;border-radius:10px;
+  background:var(--ink);
+  display:grid;place-items:center;flex:none;
+}
+.brand .mark svg{width:20px;height:20px;}
+.nav-links{
+  display:flex;gap:22px;margin-left:auto;
+  font-size:14.5px;color:var(--ink-soft);flex-wrap:wrap;
+}
+.nav-links a{padding:6px 0;border-bottom:2px solid transparent;transition:.2s;}
+.nav-links a:hover{border-bottom-color:var(--accent);color:var(--ink);}
+/* ---------- hero ---------- */
+.hero{padding:52px 0 40px;}
+.hero-grid{
+  display:grid;grid-template-columns:1.25fr .85fr;gap:44px;align-items:center;
+}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent-soft);color:#c23c14;
+  font-size:13px;font-weight:600;
+  padding:6px 14px;border-radius:999px;letter-spacing:.3px;
+}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(.8);}}
+h1{
+  font-size:clamp(30px,4.6vw,46px);
+  line-height:1.22;
+  margin:18px 0 16px;
+  letter-spacing:-.5px;
+  font-weight:800;
+}
+.hero p.lead{
+  font-size:16.5px;color:var(--ink-soft);margin:0 0 26px;max-width:33em;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 24px;border-radius:12px;
+  font-size:15px;font-weight:600;transition:.2s;
+  border:1px solid transparent;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 20px -8px rgba(255,91,46,.75);}
+.btn-primary:hover{background:#e84a1e;transform:translateY(-1px);}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);}
+.btn-ghost:hover{border-color:var(--ink);}
+.btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;pointer-events:none;box-shadow:none;}
+.hero-side{
+  background:var(--ink);color:#e8eaf2;
+  border-radius:22px;padding:26px 24px;
+  position:relative;overflow:hidden;
+}
+.hero-side::after{
+  content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;
+  border-radius:50%;background:radial-gradient(circle,rgba(255,91,46,.5),transparent 70%);
+}
+.hero-side h2{font-size:15px;margin:0 0 16px;color:#fff;letter-spacing:.5px;font-weight:700;}
+.mini-list{list-style:none;padding:0;margin:0;display:grid;gap:13px;position:relative;z-index:1;}
+.mini-list li{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:#c8ccdb;line-height:1.55;}
+.mini-list .tag{
+  flex:none;font-size:11.5px;font-weight:700;color:var(--gold);
+  border:1px solid rgba(242,182,48,.45);border-radius:6px;
+  padding:2px 7px;margin-top:2px;letter-spacing:.5px;
+}
+/* ---------- section base ---------- */
+section{padding:46px 0;}
+.sec-head{margin-bottom:28px;}
+.sec-head h2{
+  font-size:clamp(21px,2.6vw,27px);margin:0 0 10px;font-weight:800;letter-spacing:-.2px;
+}
+.sec-head p{margin:0;color:var(--ink-soft);font-size:15px;max-width:44em;}
+/* ---------- cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;transition:.22s;
+}
+.card:hover{transform:translateY(-3px);border-color:#cfc6b8;box-shadow:0 14px 30px -20px rgba(17,26,43,.5);}
+.card .ico{
+  width:44px;height:44px;border-radius:12px;background:var(--accent-soft);
+  display:grid;place-items:center;margin-bottom:16px;
+}
+.card .ico svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.8;}
+.card h3{font-size:17px;margin:0 0 8px;font-weight:700;}
+.card p{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.7;}
+/* ---------- schedule ---------- */
+.schedule{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+.srow{
+  display:grid;grid-template-columns:96px 1fr auto;
+  gap:18px;align-items:center;
+  padding:18px 24px;border-bottom:1px solid var(--line);
+}
+.srow:last-child{border-bottom:0;}
+.srow .time{font-weight:700;font-size:15px;color:var(--accent);font-variant-numeric:tabular-nums;}
+.srow .body strong{display:block;font-size:15.5px;margin-bottom:2px;}
+.srow .body span{font-size:13.5px;color:#6b7488;}
+.srow .pill{
+  font-size:12.5px;font-weight:600;color:var(--ink-soft);
+  background:var(--paper);border:1px solid var(--line);
+  padding:4px 12px;border-radius:999px;white-space:nowrap;
+}
+.srow .pill.live{background:var(--accent-soft);border-color:#ffcdb9;color:#c23c14;}
+/* ---------- two col article ---------- */
+.article-grid{display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:start;}
+.prose h2{font-size:23px;margin:0 0 16px;font-weight:800;}
+.prose h3{font-size:16.5px;margin:26px 0 8px;font-weight:700;}
+.prose p{margin:0 0 14px;font-size:15.5px;color:var(--ink-soft);}
+.prose ul{margin:0 0 16px;padding-left:20px;color:var(--ink-soft);font-size:15.5px;}
+.prose li{margin-bottom:7px;}
+.aside{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;position:sticky;top:92px;
+}
+.aside h3{font-size:15.5px;margin:0 0 14px;font-weight:700;}
+.aside dl{margin:0;font-size:14px;}
+.aside dt{font-weight:700;color:var(--ink);margin-top:14px;}
+.aside dt:first-child{margin-top:0;}
+.aside dd{margin:3px 0 0;color:var(--ink-soft);line-height:1.65;}
+/* ---------- filter ---------- */
+.filter-bar{
+  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;align-items:center;
+}
+.chip{
+  border:1px solid var(--line);background:#fff;color:var(--ink-soft);
+  font-size:14px;padding:8px 18px;border-radius:999px;cursor:pointer;
+  font-family:inherit;transition:.18s;
+}
+.chip:hover{border-color:#c3b9a9;}
+.chip.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.show-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:.2s;
+}
+.show-card:hover{border-color:#cfc6b8;}
+.show-card .meta{font-size:12.5px;color:var(--accent);font-weight:700;letter-spacing:.4px;margin-bottom:6px;}
+.show-card h3{font-size:17px;margin:0 0 8px;font-weight:700;}
+.show-card p{margin:0 0 14px;font-size:14.5px;color:var(--ink-soft);}
+.show-card .foot{display:flex;justify-content:space-between;font-size:13px;color:#7b8397;border-top:1px dashed var(--line);padding-top:12px;}
+.empty-tip{display:none;color:#7b8397;font-size:14.5px;padding:26px 0;}
+/* ---------- faq ---------- */
+.faq{border-top:1px solid var(--line);}
+.faq details{
+  border-bottom:1px solid var(--line);padding:18px 0;
+}
+.faq summary{
+  cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
+  display:flex;justify-content:space-between;gap:16px;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";color:var(--accent);font-size:20px;font-weight:400;line-height:1;}
+.faq details[open] summary::after{content:"–";}
+.faq details p{margin:12px 0 0;font-size:15px;color:var(--ink-soft);}
+/* ---------- footer ---------- */
+footer{
+  background:var(--ink);color:#a9b1c4;margin-top:30px;
+  padding:44px 0 30px;font-size:14px;
+}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;}
+.foot-brand{max-width:340px;}
+.foot-brand .brand{color:#fff;margin-bottom:12px;}
+.foot-brand p{margin:0;line-height:1.8;color:#8f97ab;}
+.foot-links{display:flex;gap:44px;flex-wrap:wrap;}
+.foot-links h4{color:#fff;font-size:14px;margin:0 0 10px;font-weight:700;}
+.foot-links ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;}
+.foot-links a:hover{color:#fff;}
+.copyright{
+  margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);
+  font-size:13px;color:#7b8397;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .cards{grid-template-columns:1fr;}
+  .article-grid{grid-template-columns:1fr;}
+  .aside{position:static;}
+  .grid-2{grid-template-columns:1fr;}
+  .nav-links{gap:16px;font-size:14px;}
+}
+@media(max-width:560px){
+  .wrap{width:calc(100% - 32px);}
+  .nav{min-height:auto;padding:12px 0;gap:12px;}
+  .nav-links{margin-left:0;width:100%;gap:14px;overflow-x:auto;padding-bottom:2px;}
+  .hero{padding:34px 0 24px;}
+  h1{font-size:28px;}
+  .srow{grid-template-columns:1fr;gap:6px;padding:16px 18px;}
+  .srow .pill{justify-self:start;}
+  section{padding:32px 0;}
+  .btn{padding:12px 20px;font-size:14.5px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="每日大赛在线观看 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="3" rx="1" fill="#ff5b2e"/><rect x="3" y="10.5" width="18" height="3" rx="1" fill="#ff5b2e" opacity=".75"/><rect x="3" y="16" width="11" height="3" rx="1" fill="#f2b630"/></svg>
+      </span>
+      每日大赛在线观看
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#today">今日看点</a>
+      <a href="#schedule">开播时间</a>
+      <a href="#catalog">大赛目录</a>
+      <a href="#guide">观看须知</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker"><span class="dot"></span>当日内容持续更新</span>
+        <h1>每日大赛在线观看</h1>
+        <p class="lead">把一天里值得看的大赛集中到一页。按门类筛选、按开播时间排序，点开即可进入对应直播或回放页；每日大赛在线观看的入口都在这里，不必在多个页面之间来回找。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#catalog">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg>
+            浏览今日大赛
+          </a>
+          <a class="btn btn-ghost" href="#schedule">查看开播时间</a>
+          <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <h2>今日速览</h2>
+        <ul class="mini-list">
+          <li><span class="tag">直播</span>晚间场次集中，19:00–21:30 为开播高峰</li>
+          <li><span class="tag">回放</span>已结束场次一般在结束后整理上线</li>
+          <li><span class="tag">筛选</span>按门类查看，减少无关内容干扰</li>
+          <li><span class="tag">提示</span>具体时间以各大赛页面公布为准</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <!-- TODAY -->
+  <section id="today">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>今天看什么：三类大赛的观看重点</h2>
+        <p>每日大赛在线观看的内容并不只有“直播”一种。有人追实时对抗，有人看完整回放，也有人只关心集锦与结果。先弄清自己要看哪一类，再决定进入哪个页面。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg></div>
+          <h3>实时直播场次</h3>
+          <p>适合想看进程与临场变化的观众。开播前进入页面即可等待，直播期间画面与比分同步推进，错过开场也能从中途跟上看。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="18" cy="18" r="2.4"/></svg></div>
+          <h3>完整回放与集锦</h3>
+          <p>已结束的大赛以回放形式保留，适合时间不固定的观众。集锦则压缩关键片段，几分钟内了解一场大赛的走向与结果。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 19V9m5 10V5m5 14v-7m5 7V8"/></svg></div>
+          <h3>赛果与对阵脉络</h3>
+          <p>只看结果的人可以直接看对阵与比分，判断哪几场值得回头补看。每日大赛在线观看的目录页会把结果信息与入口放在一起。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>开播时间线</h2>
+        <p>下面是一天中常见的开播节奏示例，用于安排观看顺序。实际场次与时间以各大赛自身页面公布为准，站点不代替主办方发布赛程。</p>
+      </div>
+      <div class="schedule">
+        <div class="srow">
+          <div class="time">10:00</div>
+          <div class="body"><strong>上午场 · 常规赛</strong><span>场次密度较低，适合补看前一日未看完的回放。</span></div>
+          <div class="pill">回放</div>
+        </div>
+        <div class="srow">
+          <div class="time">14:00</div>
+          <div class="body"><strong>下午场 · 小组与淘汰</strong><span>对阵集中，同一时段可能有多场并行，建议先看目录再选。</span></div>
+          <div class="pill">直播</div>
+        </div>
+        <div class="srow">
+          <div class="time">19:00</div>
+          <div class="body"><strong>晚间黄金场 · 焦点场次</strong><span>观看人数最多，页面加载压力较大，提前进入更稳妥。</span></div>
+          <div class="pill live">直播 · 高峰</div>
+        </div>
+        <div class="srow">
+          <div class="time">21:30</div>
+          <div class="body"><strong>收尾场 · 决赛与颁奖</strong><span>结束后通常较快整理回放，适合次日再看。</span></div>
+          <div class="pill">直播 / 回放</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG -->
+  <section id="catalog">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>大赛目录</h2>
+        <p>按门类筛选当日大赛，每个条目显示当前状态与预计时长。选择门类后，列表只保留对应内容；清空筛选可回到全部。</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="按门类筛选大赛">
+        <button class="chip active" data-filter="all" type="button">全部</button>
+        <button class="chip" data-filter="match" type="button">对抗竞技</button>
+        <button class="chip" data-filter="skill" type="button">技艺展示</button>
+        <button class="chip" data-filter="quiz" type="button">知识比拼</button>
+      </div>
+      <div class="grid-2" id="catalogList">
+        <article class="show-card" data-type="match">
+          <div class="meta">对抗竞技 · 直播中</div>
+          <h3>团队对抗常规轮</h3>
+          <p>多支队伍同日轮番登场，赛制为积分制。适合想看完整对局节奏的观众，中途进入也能通过画面信息判断局势。</p>
+          <div class="foot"><span>预计时长 2 小时</span><span>今日 14:00 起</span></div>
+        </article>
+        <article class="show-card" data-type="match">
+          <div class="meta">对抗竞技 · 晚间焦点</div>
+          <h3>淘汰赛关键场次</h3>
+          <p>一场定去留，节奏偏快。焦点场次观看人数多，建议提前进入页面等待，避免开播瞬间卡顿。</p>
+          <div class="foot"><span>预计时长 1.5 小时</span><span>今日 19:00</span></div>
+        </article>
+        <article class="show-card" data-type="skill">
+          <div class="meta">技艺展示 · 直播</div>
+          <h3>技艺综合展示场</h3>
+          <p>以完成度与稳定度为主要看点，赛程较长但节奏平稳。想看清细节的观众可配合回放反复观看。</p>
+          <div class="foot"><span>预计时长 2.5 小时</span><span>今日 16:30</span></div>
+        </article>
+        <article class="show-card" data-type="quiz">
+          <div class="meta">知识比拼 · 回放</div>
+          <h3>知识竞答团体赛</h3>
+          <p>以问答与抢答推进，信息密度高。错过直播可直接看回放，配合集锦能快速掌握关键题目与得分变化。</p>
+          <div class="foot"><span>预计时长 1 小时</span><span>回放已整理</span></div>
+        </article>
+      </div>
+      <p class="empty-tip" id="emptyTip">该门类今日暂无收录场次，切换其他门类查看。</p>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section id="guide">
+    <div class="wrap article-grid">
+      <div class="prose">
+        <h2>每日大赛在线观看怎么看更省时间</h2>
+        <p>把每日大赛在线观看当成一份“当日清单”来用，会比逐个平台翻找更省时间。核心思路只有一条：先确定你要的是实时进程，还是完整结果。前者看开播时间，后者看回放与赛果。两类内容在目录中分开标注，选择时不容易混淆。</p>
+
+        <h3>先看状态，再看内容</h3>
+        <p>目录中的每个条目都会标出当前状态，例如直播中、即将开始、回放已整理。状态决定了你的操作方式：直播中直接进入即可；即将开始可以提前打开页面等待；只有回放时，就不要按直播节奏去等。每日大赛在线观看的入口始终指向对应场次，而不是笼统的首页。</p>
+
+        <h3>并行场次的取舍</h3>
+        <p>晚间常常有多场同时进行。此时不建议全部打开，画面与声音互相干扰，反而看不清任何一场。更实际的做法是：主看一场焦点赛，其余场次在结束后补回放，或只看集锦里的关键片段。每日大赛在线观看的目录页会把焦点场次排在前面，方便优先选择。</p>
+
+        <h3>网络与观看环境</h3>
+        <ul>
+          <li>直播高峰时段提前几分钟进入，减少等待。</li>
+          <li>移动端观看时保持稳定网络，避免频繁切换。</li>
+          <li>回放适合在空闲时段看，可随时暂停与继续。</li>
+          <li>如遇页面加载缓慢，可稍后重试或改看回放。</li>
+        </ul>
+
+        <h3>信息以主办方公布为准</h3>
+        <p>站点提供的是观看入口与目录组织，赛制、时间与结果的最终口径属于各大赛的主办方。若目录标注与实际页面不一致，以实际页面为准。理解这一点，能避免把“整理信息”误当成“官方赛程”。每日大赛在线观看的价值在于把分散的入口集中起来，减少寻找成本。</p>
+
+        <h3>适合谁使用</h3>
+        <p>时间碎片化的观众，可以只看集锦与赛果；想跟完整进程的观众，按开播时间线安排；只想看某一门类的观众，用筛选把无关内容去掉。三类需求都能在同一页面内完成，不必为不同需求打开不同站点。这也是每日大赛在线观看被反复使用的原因：入口稳定、分类清楚、状态明确。</p>
+      </div>
+      <aside class="aside">
+        <h3>观看要点速记</h3>
+        <dl>
+          <dt>状态优先</dt>
+          <dd>先看直播 / 回放标注，再决定进入方式。</dd>
+          <dt>高峰提前</dt>
+          <dd>19:00–21:30 场次密集，提前进入更稳。</dd>
+          <dt>并行取舍</dt>
+          <dd>主看一场，其余补回放或看集锦。</dd>
+          <dt>口径来源</dt>
+          <dd>时间与赛制以主办方页面为准。</dd>
+          <dt>入口集中</dt>
+          <dd>目录即入口，按场次直接进入。</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见问题</h2>
+        <p>关于每日大赛在线观看，访问者最常问的几件事，集中在这里回答。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>每日大赛在线观看需要安装客户端吗？</summary>
+          <p>不需要。页面在浏览器中直接打开，选择场次后进入对应页面即可观看，桌面与移动端均可使用。</p>
+        </details>
+        <details>
+          <summary>错过直播还能看吗？</summary>
+          <p>已结束的场次通常会在结束后整理为回放，目录中会标注“回放已整理”。具体是否提供回放，取决于该场次主办方的安排。</p>
+        </details>
+        <details>
+          <summary>为什么有些场次同时开播？</summary>
+          <p>大赛日程由主办方安排，多个场地或分组可能在同一时段进行。页面用状态与门类区分，方便你选择主看场次。</p>
+        </details>
+        <details>
+          <summary>目录里的时间准确吗？</summary>
+          <p>目录时间用于安排观看顺序，属于整理信息。最终时间、赛制与结果以各大赛主办方公布为准，如有出入请以实际页面为准。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="3" rx="1" fill="#ff5b2e"/><rect x="3" y="10.5" width="18" height="3" rx="1" fill="#ff5b2e" opacity=".75"/><rect x="3" y="16" width="11" height="3" rx="1" fill="#f2b630"/></svg>
+          </span>
+          每日大赛在线观看
+        </div>
+        <p>集中当日热门大赛的观看入口与目录，按门类筛选、按时间安排观看顺序。每日大赛在线观看，让寻找入口这件事变简单。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>浏览</h4>
+          <ul>
+            <li><a href="#today">今日看点</a></li>
+            <li><a href="#schedule">开播时间</a></li>
+            <li><a href="#catalog">大赛目录</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>帮助</h4>
+          <ul>
+            <li><a href="#guide">观看须知</a></li>
+            <li><a href="#faq">常见问题</a></li>
+            <li><a href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>每日大赛在线观看 · 内容仅为观看入口整理，赛程与结果以主办方公布为准。</span>
+      <span>页面内容持续更新</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('#catalogList .show-card');
+  var empty = document.getElementById('emptyTip');
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      chips.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var type = btn.getAttribute('data-filter');
+      var shown = 0;
+      cards.forEach(function(card){
+        var ok = (type === 'all' || card.getAttribute('data-type') === type);
+        card.style.display = ok ? '' : 'none';
+        if(ok) shown++;
+      });
+      empty.style.display = shown === 0 ? 'block' : 'none';
+    });
+  });
+})();
+</script>
+</body>
+</html>
