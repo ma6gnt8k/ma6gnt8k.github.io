@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>茄子短视频-茄子短视频短剧内容_茄子短视频热门推荐与看剧入口</title>
+<meta name="description" content="茄子短视频是一个以短剧、生活短片与创作者内容为主的短视频平台，这里汇总茄子短视频的热门短剧、分类浏览入口与观看方式，帮你在茄子短视频上快速找到想看的内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b1a4a'/%3E%3Cpath d='M24 18c8 0 14 5 14 13 0 9-7 15-16 15-4 0-7-1-9-3 6 0 10-4 10-9 0-4-3-7-7-7-1 0-2 0-3 1 2-6 6-10 11-10z' fill='%237d5ce0'/%3E%3Ccircle cx='42' cy='44' r='6' fill='%23f2c14e'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c1726;
+  --ink-soft:#4b4360;
+  --muted:#7a7390;
+  --plum:#2b1a4a;
+  --violet:#7d5ce0;
+  --violet-soft:#efe9ff;
+  --gold:#f2c14e;
+  --paper:#fbf9ff;
+  --line:#e4def3;
+  --radius:16px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{max-width:100%;display:block;}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:40;
+  background:rgba(43,26,74,.97);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.header-inner{
+  display:flex;align-items:center;gap:18px;
+  padding:12px 20px;max-width:1120px;margin:0 auto;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(140deg,#8a68f0,#5a3fb8);
+  display:grid;place-items:center;flex:none;
+}
+.brand-mark svg{width:22px;height:22px;}
+.brand-text{
+  font-size:18px;font-weight:800;letter-spacing:.5px;color:#fff;white-space:nowrap;
+}
+.nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+.nav a{
+  font-size:14px;color:#ded6f6;padding:6px 12px;border-radius:999px;
+  transition:.2s;
+}
+.nav a:hover,.nav a:focus-visible{background:rgba(255,255,255,.14);color:#fff;}
+.nav a.cta{
+  background:var(--gold);color:#3a2a05;font-weight:700;
+}
+.nav a.cta:hover{background:#ffd469;color:#3a2a05;}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(900px 380px at 88% -10%,rgba(125,92,224,.35),transparent 70%),
+    linear-gradient(160deg,#2b1a4a 0%,#3a2560 55%,#241640 100%);
+  color:#fff;
+  padding:52px 0 46px;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:1px;color:#e7ddff;
+  background:rgba(255,255,255,.1);
+  padding:5px 14px;border-radius:999px;margin-bottom:18px;
+}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--gold);display:block;}
+h1{
+  margin:0 0 16px;
+  font-size:clamp(30px,4.6vw,44px);
+  line-height:1.22;font-weight:900;letter-spacing:.5px;
+}
+.hero p.lead{
+  margin:0 0 24px;font-size:16.5px;color:#ddd3f4;max-width:34em;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-weight:700;font-size:15px;
+  border:1px solid transparent;cursor:pointer;transition:.2s;
+}
+.btn-primary{background:var(--gold);color:#3a2a05;}
+.btn-primary:hover{background:#ffd469;}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#fff;}
+.btn-ghost:hover{background:rgba(255,255,255,.12);}
+.btn[aria-disabled="true"]{opacity:.6;pointer-events:none;}
+.hero-stats{
+  display:flex;gap:26px;margin-top:30px;flex-wrap:wrap;
+}
+.hero-stats div span{display:block;font-size:22px;font-weight:800;color:var(--gold);}
+.hero-stats div small{font-size:13px;color:#c9bfe2;}
+.hero-art{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:22px;padding:18px;
+}
+.hero-art svg{width:100%;height:auto;}
+.hero-art figcaption{
+  font-size:12.5px;color:#c9bfe2;margin-top:10px;text-align:center;
+}
+
+/* sections */
+section{padding:56px 0;}
+.sec-head{margin-bottom:26px;}
+.sec-tag{
+  font-size:13px;color:var(--violet);font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;margin-bottom:6px;
+}
+h2{
+  margin:0 0 10px;font-size:clamp(22px,2.8vw,28px);font-weight:800;line-height:1.35;
+  color:var(--ink);
+}
+.sec-desc{margin:0;color:var(--ink-soft);max-width:44em;font-size:15.5px;}
+
+/* cards */
+.card-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;transition:.2s;
+}
+.card:hover{border-color:#c9b8f5;box-shadow:0 10px 26px rgba(80,52,160,.09);}
+.card-ico{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:var(--violet-soft);margin-bottom:14px;
+}
+.card-ico svg{width:22px;height:22px;}
+.card h3{margin:0 0 8px;font-size:17px;font-weight:800;}
+.card p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+/* categories */
+.cat-list{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.cat{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:16px 16px;display:flex;align-items:center;gap:12px;transition:.2s;
+}
+.cat:hover{background:var(--violet-soft);border-color:#cdbcf7;}
+.cat .dot{
+  width:34px;height:34px;border-radius:10px;flex:none;
+  display:grid;place-items:center;color:#fff;font-size:14px;font-weight:800;
+}
+.cat strong{display:block;font-size:15px;}
+.cat small{color:var(--muted);font-size:12.5px;}
+
+/* list */
+.picks{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.pick{
+  display:flex;gap:16px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius);padding:16px;transition:.2s;
+}
+.pick:hover{border-color:#c9b8f5;}
+.pick-thumb{
+  width:86px;height:86px;border-radius:12px;flex:none;overflow:hidden;
+  background:linear-gradient(145deg,#efe9ff,#d9ccfb);display:grid;place-items:center;
+}
+.pick-thumb svg{width:44px;height:44px;}
+.pick-body h3{margin:0 0 6px;font-size:16px;font-weight:800;line-height:1.4;}
+.pick-body p{margin:0 0 8px;font-size:14px;color:var(--ink-soft);}
+.meta{display:flex;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);}
+.meta em{
+  font-style:normal;background:var(--violet-soft);color:#5b3fc0;
+  padding:2px 9px;border-radius:999px;
+}
+
+/* about / long text */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;}
+.prose p{margin:0 0 16px;color:var(--ink-soft);font-size:15.5px;}
+.prose h3{margin:22px 0 10px;font-size:17.5px;font-weight:800;}
+.prose ul{margin:0 0 16px;padding-left:20px;color:var(--ink-soft);font-size:15.5px;}
+.prose li{margin-bottom:8px;}
+
+.fact-box{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;
+}
+.fact-box h3{margin:0 0 14px;font-size:16px;font-weight:800;}
+.fact-row{
+  display:flex;justify-content:space-between;gap:12px;
+  padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px;
+}
+.fact-row:last-child{border-bottom:0;}
+.fact-row span:first-child{color:var(--muted);}
+.fact-row span:last-child{font-weight:700;text-align:right;}
+
+/* download strip */
+.dl-strip{
+  background:linear-gradient(150deg,#2b1a4a,#3d2766);
+  color:#fff;border-radius:22px;padding:34px 32px;
+  display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+}
+.dl-strip h2{color:#fff;margin-bottom:8px;}
+.dl-strip p{margin:0;color:#d5c9f2;font-size:15px;max-width:38em;}
+
+/* footer */
+footer{
+  background:#20142f;color:#b9aece;padding:38px 0 26px;font-size:14px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;margin-bottom:26px;}
+.foot-grid h4{color:#fff;font-size:14.5px;margin:0 0 12px;font-weight:800;}
+.foot-grid ul{list-style:none;margin:0;padding:0;}
+.foot-grid li{margin-bottom:8px;}
+.foot-grid a:hover{color:var(--gold);}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.foot-brand .brand-mark{width:32px;height:32px;border-radius:9px;}
+.foot-brand strong{color:#fff;font-size:16px;font-weight:800;}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:18px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:#9086a8;
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:28px;}
+  .hero-art{order:-1;max-width:420px;}
+  .card-grid{grid-template-columns:1fr 1fr;}
+  .cat-list{grid-template-columns:1fr 1fr;}
+  .about-grid{grid-template-columns:1fr;}
+  .picks{grid-template-columns:1fr;}
+  .dl-strip{grid-template-columns:1fr;padding:28px 22px;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  section{padding:40px 0;}
+  .card-grid{grid-template-columns:1fr;}
+  .cat-list{grid-template-columns:1fr;}
+  .nav{width:100%;margin-left:0;justify-content:flex-start;}
+  .nav a{padding:6px 10px;font-size:13.5px;}
+  .hero{padding:34px 0 34px;}
+  .hero-stats{gap:18px;}
+  .foot-grid{grid-template-columns:1fr;}
+  .pick-thumb{width:70px;height:70px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M8 5c4 0 7 2.6 7 6.6 0 4.6-3.6 7.4-8 7.4-1.8 0-3.4-.4-4.4-1.3 3 0 5-2 5-4.5 0-2-1.5-3.5-3.6-3.5-.5 0-1 .1-1.5.3C3.6 7.6 5.6 5 8 5z" fill="#fff"/><circle cx="16.5" cy="17" r="3" fill="#f2c14e"/></svg>
+      </span>
+      <span class="brand-text">茄子短视频</span>
+    </a>
+    <nav class="nav" aria-label="站点导航">
+      <a href="#features">平台特点</a>
+      <a href="#channels">内容分类</a>
+      <a href="#picks">热门片单</a>
+      <a href="#about">使用说明</a>
+      <a class="cta" href="#download">获取入口</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><i></i>短剧 · 生活短片 · 创作者内容</span>
+        <h1>茄子短视频</h1>
+        <p class="lead">茄子短视频是一个以短剧和轻量生活短片为主的内容平台。这里把茄子短视频的频道分类、热门片单和观看入口集中在一起，方便你先了解内容方向，再决定从哪一部开始看。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#picks">浏览热门片单</a>
+          <a class="btn btn-ghost" href="#channels">查看内容分类</a>
+        </div>
+        <div class="hero-stats">
+          <div><span>4 类</span><small>主要内容频道</small></div>
+          <div><span>6 部</span><small>本期精选片单</small></div>
+          <div><span>竖屏</span><small>为主观看形态</small></div>
+        </div>
+      </div>
+      <figure class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 230" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="320" height="230" rx="16" fill="#3a2560"/>
+          <rect x="26" y="34" width="86" height="162" rx="14" fill="#523a8c"/>
+          <rect x="26" y="34" width="86" height="162" rx="14" fill="none" stroke="#8a68f0" stroke-width="2"/>
+          <circle cx="69" cy="70" r="16" fill="#f2c14e"/>
+          <rect x="40" y="98" width="58" height="6" rx="3" fill="#c9b8f5"/>
+          <rect x="40" y="112" width="42" height="6" rx="3" fill="#8a68f0"/>
+          <rect x="40" y="138" width="58" height="44" rx="8" fill="#2b1a4a"/>
+          <path d="M63 152l16 8-16 8z" fill="#f2c14e"/>
+          <rect x="126" y="52" width="86" height="126" rx="14" fill="#4a3380"/>
+          <rect x="126" y="52" width="86" height="126" rx="14" fill="none" stroke="#8a68f0" stroke-width="2"/>
+          <circle cx="169" cy="86" r="14" fill="#efe9ff"/>
+          <path d="M163 86c0-4 3-7 8-7 3 0 5 1 6 2-2 0-3 1-3 3s1 3 3 3c1 0 2 0 2-1-1 3-4 5-7 5-5 0-9-2-9-5z" fill="#5b3fc0"/>
+          <rect x="140" y="112" width="58" height="6" rx="3" fill="#c9b8f5"/>
+          <rect x="140" y="126" width="36" height="6" rx="3" fill="#8a68f0"/>
+          <rect x="226" y="34" width="70" height="70" rx="12" fill="#523a8c"/>
+          <circle cx="261" cy="69" r="18" fill="none" stroke="#f2c14e" stroke-width="3"/>
+          <path d="M256 60l14 9-14 9z" fill="#f2c14e"/>
+          <rect x="226" y="118" width="70" height="78" rx="12" fill="#4a3380"/>
+          <rect x="240" y="134" width="42" height="6" rx="3" fill="#c9b8f5"/>
+          <rect x="240" y="148" width="30" height="6" rx="3" fill="#8a68f0"/>
+          <rect x="240" y="168" width="42" height="14" rx="7" fill="#f2c14e"/>
+        </svg>
+        <figcaption>竖屏短剧与生活片段，是茄子短视频的主要内容形态</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">Platform</div>
+        <h2>茄子短视频的内容特点</h2>
+        <p class="sec-desc">茄子短视频以单集时长较短的竖屏内容为主，剧情推进直接、单集信息密度高，适合碎片时间连续观看。下面几项是它在使用体验上的主要侧重。</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="3" stroke="#7d5ce0" stroke-width="2"/><path d="M10 9l5 3-5 3z" fill="#7d5ce0"/></svg>
+          </div>
+          <h3>竖屏单集叙事</h3>
+          <p>多数短剧以竖屏拍摄，一集一个转折，打开即可进入剧情，不需要长时间铺垫。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#7d5ce0" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>分类清晰</h3>
+          <p>短剧、生活、搞笑、情感等频道分开陈列，方便按兴趣直接进入，而不是盲目滑动。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#7d5ce0" stroke-width="2"/><path d="M12 8v4l3 2" stroke="#7d5ce0" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>连续追剧</h3>
+          <p>同一条故事线按集排列，更新后可在原剧集页继续向后观看，追剧路径较短。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 4l2.5 5.2 5.5.8-4 3.9 1 5.6-5-2.7-5 2.7 1-5.6-4-3.9 5.5-.8z" stroke="#7d5ce0" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>创作者内容</h3>
+          <p>除短剧外还有大量个人创作者投稿的生活与搞笑短片，题材更贴近日常。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12a7 7 0 0114 0" stroke="#7d5ce0" stroke-width="2" stroke-linecap="round"/><rect x="3" y="12" width="4" height="7" rx="2" fill="#7d5ce0"/><rect x="17" y="12" width="4" height="7" rx="2" fill="#7d5ce0"/></svg>
+          </div>
+          <h3>轻量浏览</h3>
+          <p>页面以视频卡片和列表为主，加载负担小，移动端打开后即可直接滑动浏览。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.3-7-9.5A4.5 4.5 0 0112 8a4.5 4.5 0 017 3.5C19 16.7 12 21 12 21z" stroke="#7d5ce0" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>题材贴近生活</h3>
+          <p>家庭、职场、情感等常见主题占比较高，剧情设定容易代入，适合放松观看。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHANNELS -->
+  <section id="channels" style="background:#f4f0fe;">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">Channels</div>
+        <h2>茄子短视频的内容分类</h2>
+        <p class="sec-desc">按内容方向划分的四类频道，是茄子短视频上最常见的入口。想快速定位，可以直接从对应分类进入。</p>
+      </div>
+      <div class="cat-list">
+        <a class="cat" href="#picks">
+          <span class="dot" style="background:#7d5ce0;">剧</span>
+          <span><strong>短剧频道</strong><small>连续剧情 · 多集更新</small></span>
+        </a>
+        <a class="cat" href="#picks">
+          <span class="dot" style="background:#e0669b;">情</span>
+          <span><strong>情感频道</strong><small>家庭职场 · 情感冲突</small></span>
+        </a>
+        <a class="cat" href="#picks">
+          <span class="dot" style="background:#e0a13c;">乐</span>
+          <span><strong>搞笑频道</strong><small>段子短片 · 轻松解压</small></span>
+        </a>
+        <a class="cat" href="#picks">
+          <span class="dot" style="background:#3fa88a;">活</span>
+          <span><strong>生活频道</strong><small>日常记录 · 创作者投稿</small></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PICKS -->
+  <section id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">Picks</div>
+        <h2>茄子短视频本期热门片单</h2>
+        <p class="sec-desc">下面六部是本期在茄子短视频上被较多讨论的内容，按题材与观看场景做了简单标注，方便按心情挑选。</p>
+      </div>
+      <div class="picks">
+        <article class="pick">
+          <div class="pick-thumb" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="6" width="32" height="36" rx="6" fill="#7d5ce0"/><path d="M20 18l10 6-10 6z" fill="#fff"/></svg>
+          </div>
+          <div class="pick-body">
+            <h3>《回家那顿饭》</h3>
+            <p>家庭题材短剧，讲一次久别后的团聚。剧情集中在餐桌一个场景，情绪推进靠对话完成。</p>
+            <div class="meta"><em>短剧</em><em>家庭</em><span>多集连载</span></div>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="pick-thumb" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="15" fill="#e0a13c"/><path d="M20 17l11 7-11 7z" fill="#fff"/></svg>
+          </div>
+          <div class="pick-body">
+            <h3>《楼上楼下》</h3>
+            <p>邻里纠纷引出的一连串误会，节奏偏快，单集结尾常留一个小反转，适合连着刷。</p>
+            <div class="meta"><em>短剧</em><em>轻喜剧</em><span>多集连载</span></div>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="pick-thumb" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M12 34l8-18 8 10 8-14" stroke="#e0669b" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
+          </div>
+          <div class="pick-body">
+            <h3>《三分钟面试》</h3>
+            <p>职场情境短片，围绕一次面试展开。台词密集，重点在角色之间的心理博弈。</p>
+            <div class="meta"><em>短剧</em><em>职场</em><span>单集完结</span></div>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="pick-thumb" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="14" width="28" height="20" rx="5" fill="#3fa88a"/><circle cx="24" cy="24" r="5" fill="#fff"/></svg>
+          </div>
+          <div class="pick-body">
+            <h3>《街角随手拍》</h3>
+            <p>生活记录类短片合集，内容以城市街景和日常片段为主，单条时长通常在几十秒。</p>
+            <div class="meta"><em>生活</em><em>记录</em><span>持续更新</span></div>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="pick-thumb" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 10c6 0 11 4.5 11 10.5C35 28 29 33 24 38c-5-5-11-10-11-17.5C13 14.5 18 10 24 10z" fill="#e0669b"/></svg>
+          </div>
+          <div class="pick-body">
+            <h3>《先说再见的人》</h3>
+            <p>情感向短剧，两条时间线交替讲述一段关系的结束。适合一次看完，不推荐跳集。</p>
+            <div class="meta"><em>情感</em><em>剧情</em><span>多集连载</span></div>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="pick-thumb" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="9" y="9" width="30" height="30" rx="8" fill="#523a8c"/><path d="M18 24h12M24 18v12" stroke="#f2c14e" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <div class="pick-body">
+            <h3>《一分钟冷知识》</h3>
+            <p>创作者投稿的知识类短片，每条讲一个小知识点，画面简单，适合通勤时零散观看。</p>
+            <div class="meta"><em>生活</em><em>知识</em><span>持续更新</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="background:#f4f0fe;">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">Guide</div>
+        <h2>怎么在茄子短视频上找到想看的内容</h2>
+        <p class="sec-desc">初次接触茄子短视频时，最容易卡在“不知道从哪看起”。下面按实际使用顺序说明观看路径，并附上几项需要提前了解的信息。</p>
+      </div>
+      <div class="about-grid">
+        <div class="prose">
+          <h3>第一步：从分类进入</h3>
+          <p>茄子短视频的首页按短剧、情感、搞笑、生活四类组织。如果你已经有明确偏好，直接进入对应分类会比在推荐流里滑动更快；如果只是想随便看看，推荐流更适合。</p>
+          <h3>第二步：确认剧集状态</h3>
+          <p>短剧类内容通常以多集形式更新。片单里标注了“多集连载”或“单集完结”，连载中的内容建议从第一集开始，避免跳集后失去人物关系铺垫。</p>
+          <h3>第三步：连续观看</h3>
+          <p>在剧集页内，茄子短视频会把同一故事线的各集按顺序排列，看下一集不需要重新搜索。追更中的剧集会在更新后出现在原位置，方便继续。</p>
+          <h3>需要注意的几点</h3>
+          <ul>
+            <li>短剧单集时长普遍较短，一部完整故事往往需要连看多集，观看前可预留时间。</li>
+            <li>创作者投稿的生活类内容更新频率不固定，片单标注仅供当期参考。</li>
+            <li>平台内容以竖屏为主，横屏观看时画面两侧会有留白。</li>
+          </ul>
+          <p>整体来说，茄子短视频适合在等车、午休等碎片时间使用。如果你更习惯先看评价再决定，片单页的题材标签和集数状态可以直接作为筛选依据。</p>
+        </div>
+        <aside class="fact-box">
+          <h3>平台信息速览</h3>
+          <div class="fact-row"><span>内容形态</span><span>竖屏短视频 / 短剧</span></div>
+          <div class="fact-row"><span>主要频道</span><span>短剧、情感、搞笑、生活</span></div>
+          <div class="fact-row"><span>单集体量</span><span>以短时长为主</span></div>
+          <div class="fact-row"><span>更新方式</span><span>连载更新 + 创作者投稿</span></div>
+          <div class="fact-row"><span>本期片单</span><span>6 部</span></div>
+          <div class="fact-row"><span>适用场景</span><span>碎片时间连续观看</span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download">
+    <div class="wrap">
+      <div class="dl-strip">
+        <div>
+          <h2>获取茄子短视频客户端</h2>
+          <p>移动端是茄子短视频的主要使用场景，竖屏滑动与连续追剧体验更完整。客户端安装包将在此处提供下载，当前版本信息以正式发布页为准。</p>
+        </div>
+        <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 5c4 0 7 2.6 7 6.6 0 4.6-3.6 7.4-8 7.4-1.8 0-3.4-.4-4.4-1.3 3 0 5-2 5-4.5 0-2-1.5-3.5-3.6-3.5-.5 0-1 .1-1.5.3C3.6 7.6 5.6 5 8 5z" fill="#fff"/><circle cx="16.5" cy="17" r="3" fill="#f2c14e"/></svg>
+          </span>
+          <strong>茄子短视频</strong>
+        </div>
+        <p style="margin:0;max-width:26em;">茄子短视频内容以短剧与生活短片为主，本页集中呈现频道分类、当期片单与观看路径，供访问者按需查阅。</p>
+      </div>
+      <div>
+        <h4>站内导航</h4>
+        <ul>
+          <li><a href="#features">平台特点</a></li>
+          <li><a href="#channels">内容分类</a></li>
+          <li><a href="#picks">热门片单</a></li>
+          <li><a href="#about">使用说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>内容方向</h4>
+        <ul>
+          <li><a href="#channels">短剧频道</a></li>
+          <li><a href="#channels">情感频道</a></li>
+          <li><a href="#channels">搞笑频道</a></li>
+          <li><a href="#channels">生活频道</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 茄子短视频 · 内容展示页</span>
+      <span>片单与分类信息以平台当期呈现为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+  </html>
