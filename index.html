@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄瓜短剧-短剧在线观看_热门短剧推荐合集</title>
+<meta name="description" content="黄瓜短剧聚合热门短剧在线观看入口，提供甜宠、逆袭、悬疑等题材短剧推荐与追剧榜单，帮助观众快速找到想看的黄瓜短剧内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b4331'/%3E%3Crect x='26' y='12' width='12' height='40' rx='6' fill='%238fd66b'/%3E%3Cpath d='M32 12c0 8 6 12 12 12' stroke='%23d9f99d' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --green-900:#14301f;
+  --green-800:#1b4331;
+  --green-700:#265c40;
+  --green-500:#4f9b5f;
+  --lime:#a8e063;
+  --lime-soft:#e8f7d4;
+  --cream:#f7f6ef;
+  --ink:#1f2a22;
+  --ink-soft:#4b5a4f;
+  --line:#dfe6d6;
+  --card:#ffffff;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(20,48,31,.08);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,246,239,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--green-800);letter-spacing:.5px;}
+.logo-mark{width:34px;height:34px;flex:none;}
+nav ul{display:flex;gap:26px;margin:0;padding:0;list-style:none;font-size:15px;color:var(--ink-soft);}
+nav a{padding:4px 0;border-bottom:2px solid transparent;transition:.2s;}
+nav a:hover{color:var(--green-700);border-color:var(--lime);}
+.nav-cta{
+  display:inline-block;background:var(--green-800);color:#fff;
+  padding:9px 20px;border-radius:999px;font-size:14px;font-weight:600;
+  transition:.2s;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--green-700);transform:translateY(-1px);}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:15px;color:var(--green-800);}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(900px 400px at 85% -10%,rgba(168,224,99,.35),transparent 60%),
+    linear-gradient(180deg,#1b4331 0%,#22503a 100%);
+  color:#eef7e6;
+  padding:64px 0 72px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;
+  border-radius:50%;border:1px solid rgba(168,224,99,.25);
+}
+.hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(168,224,99,.16);color:var(--lime);
+  padding:6px 14px;border-radius:999px;font-size:13px;letter-spacing:1px;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(30px,4.4vw,46px);
+  line-height:1.25;margin:0 0 18px;font-weight:800;letter-spacing:1px;color:#fff;
+}
+.hero p.lead{font-size:16px;color:#cfe3c6;margin:0 0 28px;max-width:34em;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+.btn-primary{
+  background:var(--lime);color:var(--green-900);font-weight:700;
+  padding:13px 30px;border-radius:999px;font-size:15px;transition:.2s;
+}
+.btn-primary:hover{background:#bdf07c;transform:translateY(-2px);}
+.btn-ghost{
+  border:1px solid rgba(238,247,230,.4);color:#eef7e6;
+  padding:12px 26px;border-radius:999px;font-size:15px;transition:.2s;
+}
+.btn-ghost:hover{border-color:var(--lime);color:var(--lime);}
+.hero-art{display:flex;justify-content:center;}
+.hero-stats{display:flex;gap:34px;margin-top:36px;flex-wrap:wrap;}
+.hero-stats div strong{display:block;font-size:22px;color:var(--lime);font-weight:800;}
+.hero-stats div span{font-size:13px;color:#b9d3ae;}
+
+/* section base */
+section{padding:64px 0;}
+.section-head{margin-bottom:34px;max-width:44em;}
+.section-head h2{
+  font-size:clamp(22px,2.6vw,28px);margin:0 0 10px;color:var(--green-800);font-weight:800;
+}
+.section-head h2::before{
+  content:"";display:inline-block;width:8px;height:22px;background:var(--lime);
+  border-radius:4px;margin-right:12px;vertical-align:-3px;
+}
+.section-head p{margin:0;color:var(--ink-soft);font-size:15px;}
+
+/* hot list */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;box-shadow:var(--shadow);transition:.25s;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-4px);border-color:#c4dca6;}
+.card .tag{
+  align-self:flex-start;font-size:12px;padding:3px 10px;border-radius:999px;
+  background:var(--lime-soft);color:var(--green-700);font-weight:600;margin-bottom:14px;
+}
+.card h3{margin:0 0 8px;font-size:17px;color:var(--green-800);}
+.card p{margin:0;font-size:14px;color:var(--ink-soft);flex:1;}
+.card .meta{margin-top:16px;font-size:13px;color:#8a9a8c;display:flex;justify-content:space-between;}
+
+/* categories & browse */
+.browse{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px;}
+.chip{
+  border:1px solid var(--line);background:#fff;border-radius:999px;
+  padding:7px 18px;font-size:14px;color:var(--ink-soft);cursor:pointer;transition:.2s;
+  font-family:inherit;
+}
+.chip:hover{border-color:var(--green-500);color:var(--green-700);}
+.chip.active{background:var(--green-800);color:#fff;border-color:var(--green-800);}
+.show-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.show-item{
+  display:flex;gap:16px;background:var(--cream);border-radius:var(--radius);
+  padding:18px;border:1px solid transparent;transition:.2s;
+}
+.show-item:hover{border-color:#c4dca6;background:#fbfaf4;}
+.show-poster{
+  width:76px;height:100px;flex:none;border-radius:10px;overflow:hidden;
+  background:linear-gradient(160deg,#265c40,#a8e063);
+}
+.show-item h4{margin:0 0 6px;font-size:16px;color:var(--green-800);}
+.show-item p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+.show-item .num{font-size:12px;color:#93a894;margin-top:8px;display:block;}
+
+/* guide */
+.guide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.guide-item{background:#fff;border-radius:var(--radius);padding:26px;border:1px solid var(--line);}
+.guide-item h3{margin:0 0 10px;font-size:17px;color:var(--green-800);}
+.guide-item p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+/* download */
+.download{
+  background:linear-gradient(135deg,#1b4331,#265c40);
+  color:#eef7e6;border-radius:22px;padding:46px;display:flex;
+  justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;
+}
+.download h2{margin:0 0 10px;font-size:24px;color:#fff;}
+.download p{margin:0;color:#c3dab8;font-size:14.5px;max-width:36em;}
+.dl-btn{
+  display:inline-block;background:var(--lime);color:var(--green-900);
+  font-weight:700;padding:14px 40px;border-radius:999px;font-size:15px;
+  pointer-events:none;
+}
+
+/* footer */
+footer{background:var(--green-900);color:#a9c2a4;padding:48px 0 28px;font-size:14px;}
+.foot-top{display:flex;justify-content:space-between;gap:36px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.1);}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:17px;margin-bottom:12px;}
+.foot-links{display:flex;gap:48px;flex-wrap:wrap;}
+.foot-links h4{color:#e6f2dd;font-size:14px;margin:0 0 12px;}
+.foot-links ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:13.5px;}
+.foot-links a:hover{color:var(--lime);}
+.copyright{padding-top:22px;font-size:13px;color:#7d9a7d;text-align:center;}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-art{order:-1;max-width:260px;margin:0 auto;}
+  .grid-3{grid-template-columns:1fr;}
+  .show-list,.guide-grid{grid-template-columns:1fr;}
+  .nav-bar{flex-wrap:wrap;}
+  nav{order:3;width:100%;display:none;}
+  nav.open{display:block;}
+  nav ul{flex-direction:column;gap:0;padding:10px 0;}
+  nav ul li a{display:block;padding:10px 0;border-bottom:1px solid var(--line);}
+  .menu-toggle{display:inline-block;}
+  section{padding:48px 0;}
+  .download{padding:30px;flex-direction:column;align-items:flex-start;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-bar">
+    <a class="logo" href="#top" aria-label="黄瓜短剧首页">
+      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b4331"/>
+        <rect x="26" y="12" width="12" height="40" rx="6" fill="#a8e063"/>
+        <path d="M32 12c0 8 6 12 12 12" stroke="#d9f99d" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="32" cy="34" r="2.2" fill="#1b4331" opacity=".5"/>
+      </svg>
+      <span>黄瓜短剧</span>
+    </a>
+    <button class="menu-toggle" aria-label="展开导航" onclick="document.querySelector('nav').classList.toggle('open')">菜单</button>
+    <nav>
+      <ul>
+        <li><a href="#hot">热播榜单</a></li>
+        <li><a href="#browse">题材分类</a></li>
+        <li><a href="#pick">选剧要点</a></li>
+        <li><a href="#download">客户端</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#browse">开始看剧</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- hero -->
+  <section class="hero" style="padding:64px 0 76px;">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">竖屏短剧 · 随时开看</span>
+        <h1>黄瓜短剧</h1>
+        <p class="lead">黄瓜短剧把甜宠、逆袭、悬疑、家庭等题材的竖屏短剧集中到一个入口，每集几分钟，通勤、午休、睡前都能接着上一集看。榜单和分类按题材整理，挑剧不必再翻找。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#hot">看热播榜单</a>
+          <a class="btn-ghost" href="#browse">按题材挑剧</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>4</strong><span>题材分区</span></div>
+          <div><strong>8</strong><span>本期推荐</span></div>
+          <div><strong>3–10</strong><span>分钟/集</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 260 300" width="260" role="presentation">
+          <defs>
+            <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a8e063"/>
+              <stop offset="1" stop-color="#4f9b5f"/>
+            </linearGradient>
+          </defs>
+          <rect x="30" y="18" width="200" height="264" rx="26" fill="#0f2618" opacity=".55"/>
+          <rect x="40" y="28" width="180" height="244" rx="22" fill="url(#pg)" opacity=".9"/>
+          <rect x="58" y="52" width="144" height="86" rx="12" fill="#0f2618" opacity=".45"/>
+          <circle cx="130" cy="95" r="20" fill="#e8f7d4" opacity=".85"/>
+          <path d="M123 85l16 10-16 10z" fill="#1b4331"/>
+          <rect x="58" y="156" width="110" height="9" rx="4.5" fill="#1b4331" opacity=".6"/>
+          <rect x="58" y="176" width="144" height="9" rx="4.5" fill="#1b4331" opacity=".4"/>
+          <rect x="58" y="196" width="84" height="9" rx="4.5" fill="#1b4331" opacity=".4"/>
+          <rect x="58" y="226" width="70" height="24" rx="12" fill="#1b4331" opacity=".7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- hot -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>本期热播推荐</h2>
+        <p>按近期播放热度挑选的黄瓜短剧条目，题材各不相同，适合作为第一次打开页面的起点。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="tag">甜宠</span>
+          <h3>《合租第100天》</h3>
+          <p>都市合租设定，主线围绕两位室友从互不熟悉到彼此依赖的过程，节奏轻快，适合碎片时间连看。</p>
+          <div class="meta"><span>更新至第24集</span><span>3分钟/集</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">逆袭</span>
+          <h3>《便利店逆袭记》</h3>
+          <p>小店主从被动应对到主动经营的故事，冲突集中在日常生意场景，情节推进直接。</p>
+          <div class="meta"><span>更新至第18集</span><span>5分钟/集</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">悬疑</span>
+          <h3>《第七通来电》</h3>
+          <p>以电话线索串联的短篇悬疑结构，每集结尾留一个疑问，适合喜欢边看边推测的观众。</p>
+          <div class="meta"><span>更新至第12集</span><span>6分钟/集</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">家庭</span>
+          <h3>《老屋的灯》</h3>
+          <p>围绕一家人回到老宅处理旧事展开，情绪线平稳，适合与家人一起观看。</p>
+          <div class="meta"><span>更新至第20集</span><span>7分钟/集</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">职场</span>
+          <h3>《方案改到第几版》</h3>
+          <p>项目组内的沟通与磨合故事，细节贴近办公室日常，台词节奏偏快。</p>
+          <div class="meta"><span>更新至第15集</span><span>4分钟/集</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">古装</span>
+          <h3>《一盏茶的时间》</h3>
+          <p>短篇幅古装单元剧，每集讲一件小事，人物关系清晰，适合零散时间观看。</p>
+          <div class="meta"><span>更新至第30集</span><span>5分钟/集</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- browse -->
+  <section id="browse" class="browse">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>按题材挑黄瓜短剧</h2>
+        <p>不同题材的观看体验差别明显，先定方向再看具体条目，能少走弯路。点击分类可筛选下方列表。</p>
+      </div>
+      <div class="filter-bar" id="filterBar">
+        <button class="chip active" data-cat="all">全部</button>
+        <button class="chip" data-cat="甜宠">甜宠</button>
+        <button class="chip" data-cat="逆袭">逆袭</button>
+        <button class="chip" data-cat="悬疑">悬疑</button>
+        <button class="chip" data-cat="家庭">家庭</button>
+      </div>
+      <div class="show-list" id="showList">
+        <article class="show-item" data-cat="甜宠">
+          <div class="show-poster" aria-hidden="true">
+            <svg viewBox="0 0 76 100"><rect width="76" height="100" fill="#265c40"/><circle cx="38" cy="40" r="16" fill="#a8e063" opacity=".9"/><rect x="16" y="66" width="44" height="6" rx="3" fill="#e8f7d4" opacity=".7"/><rect x="22" y="78" width="32" height="6" rx="3" fill="#e8f7d4" opacity=".45"/></svg>
+          </div>
+          <div>
+            <h4>《合租第100天》</h4>
+            <p>合租日常里的关系变化，对白轻松，适合下班后放松观看。</p>
+            <span class="num">甜宠 · 更新至第24集</span>
+          </div>
+        </article>
+        <article class="show-item" data-cat="逆袭">
+          <div class="show-poster" aria-hidden="true">
+            <svg viewBox="0 0 76 100"><rect width="76" height="100" fill="#1b4331"/><path d="M20 70l16-24 10 12 10-20" stroke="#a8e063" stroke-width="5" fill="none" stroke-linecap="round"/><rect x="16" y="80" width="44" height="6" rx="3" fill="#e8f7d4" opacity=".5"/></svg>
+          </div>
+          <div>
+            <h4>《便利店逆袭记》</h4>
+            <p>小店经营中的转折与选择，情节围绕具体事件推进。</p>
+            <span class="num">逆袭 · 更新至第18集</span>
+          </div>
+        </article>
+        <article class="show-item" data-cat="悬疑">
+          <div class="show-poster" aria-hidden="true">
+            <svg viewBox="0 0 76 100"><rect width="76" height="100" fill="#14301f"/><circle cx="38" cy="42" r="18" stroke="#a8e063" stroke-width="5" fill="none"/><circle cx="38" cy="42" r="6" fill="#a8e063"/><rect x="18" y="76" width="40" height="6" rx="3" fill="#e8f7d4" opacity=".4"/></svg>
+          </div>
+          <div>
+            <h4>《第七通来电》</h4>
+            <p>电话线索逐集揭开，结尾留白多，适合边看边讨论。</p>
+            <span class="num">悬疑 · 更新至第12集</span>
+          </div>
+        </article>
+        <article class="show-item" data-cat="家庭">
+          <div class="show-poster" aria-hidden="true">
+            <svg viewBox="0 0 76 100"><rect width="76" height="100" fill="#22503a"/><path d="M18 52l20-16 20 16v26H18z" fill="#a8e063" opacity=".85"/><rect x="34" y="62" width="8" height="16" fill="#1b4331"/></svg>
+          </div>
+          <div>
+            <h4>《老屋的灯》</h4>
+            <p>一家人回到老宅后的相处，情绪表达克制，适合全家一起看。</p>
+            <span class="num">家庭 · 更新至第20集</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- guide -->
+  <section id="pick">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>选剧要点</h2>
+        <p>黄瓜短剧单集时长普遍较短，选剧时先看题材和更新进度，比盲目点开更省时间。</p>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-item">
+          <h3>先看题材标签</h3>
+          <p>甜宠偏向轻松日常，逆袭偏重情节转折，悬疑注重线索铺陈，家庭题材情绪更稳。黄瓜短剧的分类页按这些标签整理，先锁定方向再看条目，能快速筛掉不合口味的内容。</p>
+        </div>
+        <div class="guide-item">
+          <h3>留意更新进度</h3>
+          <p>短剧集数不多，但更新节奏不一。追更时优先选择已完结或接近完结的条目，能一次看完；正在更新的剧集则适合每集几分钟分批跟。</p>
+        </div>
+        <div class="guide-item">
+          <h3>按单集时长安排</h3>
+          <p>3分钟左右的剧集适合通勤和排队，6分钟以上更适合在家完整观看。黄瓜短剧在条目信息中标注了单集时长，可以按自己的空闲时段挑选。</p>
+        </div>
+        <div class="guide-item">
+          <h3>关注结尾钩子</h3>
+          <p>多数短剧在每集结尾设置悬念，连续观看的体验更完整。如果只看零散几集，建议从第一集开始，避免错过人物关系的铺垫。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- download -->
+  <section id="download" style="padding-top:0;">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <h2>黄瓜短剧客户端</h2>
+          <p>客户端支持追剧记录与更新提醒，方便在手机上接着上一集看。当前版本信息以下载页为准，安装前请确认设备系统版本。</p>
+        </div>
+        <a class="dl-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#265c40"/>
+            <rect x="26" y="12" width="12" height="40" rx="6" fill="#a8e063"/>
+            <path d="M32 12c0 8 6 12 12 12" stroke="#d9f99d" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>黄瓜短剧</span>
+        </div>
+        <p style="max-width:26em;margin:0;">黄瓜短剧聚合竖屏短剧的在线观看入口，按题材整理推荐，帮助观众更快找到想看的剧集。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>浏览</h4>
+          <ul>
+            <li><a href="#hot">热播榜单</a></li>
+            <li><a href="#browse">题材分类</a></li>
+            <li><a href="#pick">选剧要点</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>使用</h4>
+          <ul>
+            <li><a href="#download">客户端下载</a></li>
+            <li><a href="#top">返回顶部</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© 黄瓜短剧 · 页面内容以实际更新为准</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('#filterBar .chip');
+  var items = document.querySelectorAll('#showList .show-item');
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      chips.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = btn.getAttribute('data-cat');
+      items.forEach(function(it){
+        var show = (cat === 'all') || (it.getAttribute('data-cat') === cat);
+        it.style.display = show ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+</body>
+      </html>
