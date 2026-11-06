@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人人影视-人人影视官网首页_影视资源站_字幕与剧集追看</title>
+<meta name="description" content="人人影视主题首页，汇集剧集、电影、字幕与追看路径的核心入口，梳理人人影视相关站点常见栏目与使用方式，帮助访问者快速找到想看的内容方向。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Cpath d='M14 20h36v24H14z' fill='none' stroke='%23f5b942' stroke-width='3'/%3E%3Cpath d='M26 27l12 7-12 7z' fill='%23f5b942'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#111827;
+  --ink-2:#26313f;
+  --paper:#f7f5f0;
+  --card:#ffffff;
+  --gold:#c8901f;
+  --gold-soft:#f5e6c4;
+  --line:#e3ded2;
+  --muted:#5c6470;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif;
+  color:var(--ink-2);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* 页头 */
+.site-header{
+  background:var(--ink);
+  color:#f2efe8;
+  border-bottom:3px solid var(--gold);
+  position:sticky;top:0;z-index:50;
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 0;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:11px;}
+.brand-mark{
+  width:40px;height:40px;border-radius:10px;
+  background:linear-gradient(145deg,#1f2937,#0b1220);
+  border:1.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  flex:none;
+}
+.brand-name{
+  font-size:21px;font-weight:700;letter-spacing:1px;color:#fff;
+}
+.brand-sub{
+  font-size:11px;letter-spacing:2px;color:#b7ae99;display:block;line-height:1.2;
+}
+.nav{display:flex;gap:6px;flex-wrap:wrap;}
+.nav a{
+  font-size:14.5px;padding:7px 13px;border-radius:999px;
+  color:#d8d3c7;transition:.2s;white-space:nowrap;
+}
+.nav a:hover,.nav a:focus-visible{background:#232f40;color:#fff;}
+
+/* 首屏 */
+.hero{
+  background:linear-gradient(160deg,#111827 0%,#1b2534 55%,#243042 100%);
+  color:#f4f1e9;
+  padding:52px 0 46px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-90px;top:-70px;width:340px;height:340px;
+  border:1px solid rgba(200,144,31,.35);border-radius:50%;
+}
+.hero::before{
+  content:"";position:absolute;right:30px;bottom:-120px;width:220px;height:220px;
+  border:1px dashed rgba(200,144,31,.25);border-radius:50%;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.35fr .9fr;gap:44px;align-items:center;
+  position:relative;z-index:2;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:2px;color:var(--gold);
+  border:1px solid rgba(200,144,31,.5);border-radius:999px;
+  padding:4px 14px;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(30px,4.2vw,44px);
+  line-height:1.25;margin:0 0 18px;font-weight:800;color:#fff;
+  letter-spacing:1px;
+}
+.hero-lead{
+  font-size:16px;color:#c8c3b6;max-width:46em;margin:0 0 26px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-size:15px;font-weight:600;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:var(--gold);color:#1a1408;}
+.btn-primary:hover{background:#dda53a;}
+.btn-ghost{border-color:rgba(244,241,233,.35);color:#f4f1e9;}
+.btn-ghost:hover{background:rgba(255,255,255,.08);}
+.btn[aria-disabled="true"]{cursor:default;opacity:.95;}
+
+.hero-panel{
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--radius);
+  padding:22px;
+  backdrop-filter:blur(2px);
+}
+.hero-panel h2{
+  font-size:14px;letter-spacing:1.5px;color:var(--gold);
+  margin:0 0 14px;font-weight:600;
+}
+.tick-list{list-style:none;margin:0;padding:0;font-size:14.5px;}
+.tick-list li{
+  display:flex;gap:10px;align-items:flex-start;padding:9px 0;
+  border-bottom:1px dashed rgba(255,255,255,.1);color:#d3cec2;
+}
+.tick-list li:last-child{border-bottom:0;}
+.tick-list svg{flex:none;margin-top:4px;}
+
+/* 通用区块 */
+section{padding:56px 0;}
+.section-head{margin-bottom:30px;max-width:62ch;}
+.section-head h2{
+  font-size:clamp(21px,2.6vw,27px);margin:0 0 10px;color:var(--ink);
+  font-weight:800;letter-spacing:.5px;
+}
+.section-head p{margin:0;color:var(--muted);font-size:15px;}
+.kicker{
+  font-size:12.5px;letter-spacing:2px;color:var(--gold);
+  font-weight:700;display:block;margin-bottom:8px;
+}
+
+/* 栏目卡片 */
+.card-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;transition:.22s;
+}
+.card:hover{border-color:#cfc4a8;transform:translateY(-3px);box-shadow:0 12px 26px -18px rgba(17,24,39,.5);}
+.card-icon{
+  width:44px;height:44px;border-radius:11px;background:var(--gold-soft);
+  display:flex;align-items:center;justify-content:center;margin-bottom:15px;
+}
+.card h3{font-size:17px;margin:0 0 9px;color:var(--ink);font-weight:700;}
+.card p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.75;}
+
+/* 内容 + 侧栏 */
+.split{display:grid;grid-template-columns:1.6fr 1fr;gap:34px;align-items:start;}
+.prose h3{font-size:17.5px;color:var(--ink);margin:26px 0 10px;font-weight:700;}
+.prose h3:first-child{margin-top:0;}
+.prose p{margin:0 0 14px;font-size:15.5px;color:#3b4453;}
+.prose strong{color:var(--ink);}
+
+.aside{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;
+}
+.aside h3{
+  font-size:15px;margin:0 0 14px;color:var(--ink);font-weight:700;
+  padding-bottom:10px;border-bottom:1px solid var(--line);
+}
+.aside dl{margin:0;font-size:14px;}
+.aside dt{font-weight:700;color:var(--ink);margin-top:13px;}
+.aside dt:first-child{margin-top:0;}
+.aside dd{margin:3px 0 0;color:var(--muted);line-height:1.7;}
+
+/* 列表区 */
+.list-band{
+  background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.row-list{list-style:none;margin:0;padding:0;}
+.row-list li{
+  display:grid;grid-template-columns:56px 1fr;gap:18px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.row-list li:last-child{border-bottom:0;padding-bottom:0;}
+.row-num{
+  font-size:15px;font-weight:800;color:var(--gold);
+  border:1px solid var(--gold-soft);border-radius:9px;
+  height:38px;display:flex;align-items:center;justify-content:center;
+  background:var(--gold-soft);
+}
+.row-list h3{margin:0 0 5px;font-size:16px;color:var(--ink);font-weight:700;}
+.row-list p{margin:0;font-size:14.5px;color:var(--muted);}
+
+/* 搜索 */
+.tool-box{
+  background:var(--ink);color:#f4f1e9;border-radius:var(--radius);
+  padding:34px 30px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+}
+.tool-box h2{margin:0 0 8px;font-size:21px;color:#fff;font-weight:800;}
+.tool-box p{margin:0;font-size:14.5px;color:#b9b3a5;max-width:48ch;}
+.search-form{display:flex;gap:8px;flex-wrap:wrap;}
+.search-form input{
+  font:inherit;font-size:14.5px;padding:11px 16px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);
+  color:#fff;min-width:230px;outline:none;
+}
+.search-form input::placeholder{color:#9a958a;}
+.search-form input:focus{border-color:var(--gold);}
+.search-form button{
+  font:inherit;font-size:14.5px;font-weight:700;cursor:pointer;
+  padding:11px 22px;border-radius:999px;border:0;background:var(--gold);color:#1a1408;
+}
+.search-form button:hover{background:#dda53a;}
+.search-result{
+  grid-column:1/-1;font-size:14px;color:#cfc9bb;min-height:1.4em;
+  border-top:1px dashed rgba(255,255,255,.15);padding-top:14px;
+}
+
+/* 页尾 */
+.site-footer{
+  background:#0d1420;color:#a9a396;padding:40px 0 28px;font-size:14px;
+}
+.footer-top{
+  display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;
+  padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1);
+}
+.footer-brand{font-size:18px;font-weight:800;color:#fff;letter-spacing:1px;}
+.footer-brand span{display:block;font-size:12px;font-weight:400;color:#8b857a;letter-spacing:1px;margin-top:4px;}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{color:#c0baac;font-size:14px;}
+.footer-links a:hover{color:var(--gold);}
+.footer-bottom{padding-top:18px;font-size:13px;color:#7d776c;line-height:1.8;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .split{grid-template-columns:1fr;}
+  .card-grid{grid-template-columns:1fr 1fr;}
+  .tool-box{grid-template-columns:1fr;}
+}
+@media (max-width:640px){
+  body{font-size:15.5px;}
+  .header-inner{padding:12px 0;gap:10px;}
+  .brand-name{font-size:18px;}
+  .nav a{font-size:13.5px;padding:6px 10px;}
+  .hero{padding:38px 0 34px;}
+  .hero-lead{font-size:15px;}
+  section{padding:42px 0;}
+  .card-grid{grid-template-columns:1fr;}
+  .btn{padding:11px 19px;font-size:14.5px;}
+  .search-form input{min-width:0;flex:1 1 100%;}
+  .search-form button{flex:1 1 100%;}
+  .tool-box{padding:26px 20px;}
+  .row-list li{grid-template-columns:44px 1fr;gap:14px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="人人影视 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <rect x="2.5" y="5" width="19" height="14" rx="2.5" stroke="#c8901f" stroke-width="1.8"/>
+          <path d="M10 9.2l5.2 2.8L10 14.8z" fill="#c8901f"/>
+        </svg>
+      </span>
+      <span>
+        <span class="brand-name">人人影视</span>
+        <span class="brand-sub">剧集 · 电影 · 字幕</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#top">首页</a>
+      <a href="#channels">内容栏目</a>
+      <a href="#guide">使用路径</a>
+      <a href="#search">站内查找</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">剧集与字幕内容入口</span>
+        <h1>人人影视</h1>
+        <p class="hero-lead">
+          人人影视是一个围绕海外剧集、电影与字幕资源形成的访问主题。本页把常见的内容栏目、追看路径和查找方式集中呈现，方便你按类型、按更新节奏找到想看的方向，也便于理解人人影视相关站点通常提供哪些内容。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#channels">浏览内容栏目</a>
+          <a class="btn btn-ghost" href="#guide">查看使用路径</a>
+          <a class="btn btn-ghost" href="#" download data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;">下载</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <h2>访问者常关注</h2>
+        <ul class="tick-list">
+          <li>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7-8" stroke="#c8901f" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            剧集按季与集拆分，便于连续追看
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7-8" stroke="#c8901f" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            中文字幕与双语字幕并行提供
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7-8" stroke="#c8901f" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            电影与剧集分区陈列，类型清晰
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7-8" stroke="#c8901f" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            更新节奏以周为单位，适合固定追看
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 内容栏目 -->
+  <section id="channels">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">内容栏目</span>
+        <h2>人人影视常见的内容分区</h2>
+        <p>访问人人影视的人，多数带着明确的观看目的。把内容拆成几个稳定分区，能减少在列表里反复翻找的时间。</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5" width="19" height="14" rx="2.5" stroke="#c8901f" stroke-width="1.8"/><path d="M10 9.2l5.2 2.8L10 14.8z" fill="#c8901f"/></svg>
+          </div>
+          <h3>海外剧集</h3>
+          <p>欧美与日韩剧集是人人影视最常被提及的内容方向，通常按季归档，一季之下列出各集，方便顺着看完。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="#c8901f" stroke-width="1.8"/><path d="M4 9h16M8 5v4" stroke="#c8901f" stroke-width="1.8"/></svg>
+          </div>
+          <h3>电影长片</h3>
+          <p>电影分区以单片为条目，涵盖剧情、科幻、悬疑等常见类型，适合按心情或类型挑选，无需连续追看。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 4h14v16l-7-4-7 4z" stroke="#c8901f" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>字幕资源</h3>
+          <p>字幕是人人影视长期积累的部分，中文字幕、双语字幕与时间轴校对版本会随内容一并列出，便于对照选择。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="#c8901f" stroke-width="1.8"/><path d="M12 7.5V12l3 2" stroke="#c8901f" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>更新与追看</h3>
+          <p>连载剧集按播出节奏更新，人人影视相关列表通常标注集数与更新时间，便于判断下一次追看的时间点。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h13" stroke="#c8901f" stroke-width="1.9" stroke-linecap="round"/></svg>
+          </div>
+          <h3>类型与榜单</h3>
+          <p>按类型、年份与热度整理条目，是初次访问人人影视时快速定位的入口，也能帮助发现同类型作品。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3.5l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.9l6.1-.8z" stroke="#c8901f" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>口碑与推荐</h3>
+          <p>评分、简介与剧评摘要并列呈现，访问者可以先读几行介绍，再决定是否进入下一层查看具体内容。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 使用路径 -->
+  <section id="guide" class="list-band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">使用路径</span>
+        <h2>从进入人人影视到找到想看的内容</h2>
+        <p>把访问过程拆成四步，比在首页反复滚动更容易得到结果。以下顺序按实际操作习惯排列。</p>
+      </div>
+      <ol class="row-list">
+        <li>
+          <span class="row-num">01</span>
+          <div>
+            <h3>先确定内容类型</h3>
+            <p>剧集还是电影，决定了后续路径。剧集需要按季与集逐层进入，电影通常一步到位，直接看条目即可。</p>
+          </div>
+        </li>
+        <li>
+          <span class="row-num">02</span>
+          <div>
+            <h3>用类型或关键词缩小范围</h3>
+            <p>人人影视的条目数量较多，先按类型、地区或年份收窄，再用片名关键词查找，比逐页翻看更省时间。</p>
+          </div>
+        </li>
+        <li>
+          <span class="row-num">03</span>
+          <div>
+            <h3>确认字幕与集数信息</h3>
+            <p>进入条目后先核对字幕版本与已更新集数，避免下载到与预期不符的版本，也便于安排连续追看。</p>
+          </div>
+        </li>
+        <li>
+          <span class="row-num">04</span>
+          <div>
+            <h3>记录追看进度</h3>
+            <p>连载内容更新周期较长，把已看集数记下来，下次回到人人影视时就能直接接着看，不必重新查找。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 正文 + 侧栏 -->
+  <section>
+    <div class="wrap split">
+      <div class="prose">
+        <h3>人人影视这个名字指向什么</h3>
+        <p>
+          人人影视在中文互联网上长期与“海外剧集 + 字幕”联系在一起。它并非单一内容，而是一类围绕剧集、电影和字幕展开的访问主题：内容以季、集为单位组织，字幕以版本区分，更新以周为节奏。理解这一点，比记住某个具体页面更有用。
+        </p>
+        <p>
+          因此，访问人人影视时的核心需求通常只有三类：<strong>找一部想看的剧</strong>、<strong>确认更新到第几集</strong>、<strong>挑选合适的字幕版本</strong>。本页的栏目划分与使用路径，正是围绕这三件事安排。
+        </p>
+
+        <h3>剧集与电影的内容差异</h3>
+        <p>
+          剧集条目通常带有季数、集数与播出状态，适合连续追看；电影条目以单片呈现，重点在片长、类型与评分。两类内容在列表里的组织方式不同，进入人人影视后先分清类型，能少走很多弯路。
+        </p>
+
+        <h3>字幕为什么需要单独说明</h3>
+        <p>
+          同一部剧可能同时存在中文字幕、双语字幕与不同校对版本，时间轴与译名也可能有差异。人人影视的字幕资源之所以被单独讨论，是因为它直接影响到观看体验：字幕版本选错，画面与文字对不上，观感会明显下降。
+        </p>
+
+        <h3>关于内容与版权</h3>
+        <p>
+          本页仅作为主题信息整理，介绍人人影视相关内容的常见组织方式与访问路径，不提供任何影视文件的存储或分发。作品版权归各自权利人所有，具体观看与使用方式请以所在地区的法律法规和正版渠道为准。
+        </p>
+      </div>
+      <aside class="aside">
+        <h3>快速了解</h3>
+        <dl>
+          <dt>内容类型</dt>
+          <dd>海外剧集、电影长片、字幕资源</dd>
+          <dt>组织方式</dt>
+          <dd>剧集按季与集归档，电影以单片陈列</dd>
+          <dt>更新节奏</dt>
+          <dd>连载剧集按播出周期更新，列表标注集数</dd>
+          <dt>字幕版本</dt>
+          <dd>中文字幕、双语字幕及校对版本并列</dd>
+          <dt>查找方式</dt>
+          <dd>类型筛选、年份筛选与片名关键词</dd>
+          <dt>使用提示</dt>
+          <dd>进入条目前先核对字幕与已更新集数</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 站内查找 -->
+  <section id="search">
+    <div class="wrap">
+      <div class="tool-box">
+        <div>
+          <h2>按片名快速查找</h2>
+          <p>输入剧集或电影名称中的关键词，页面会在下方栏目中给出对应提示。这是演示用查找，结果取自本页已有内容。</p>
+        </div>
+        <form class="search-form" id="searchForm" role="search">
+          <label for="q" style="position:absolute;left:-9999px;">输入片名关键词</label>
+          <input id="q" name="q" type="search" placeholder="例如：剧集、电影、字幕" autocomplete="off">
+          <button type="submit">查找</button>
+        </form>
+        <p class="search-result" id="result" aria-live="polite">可尝试输入“剧集”“电影”“字幕”“更新”等词。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section id="faq" class="list-band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">常见问题</span>
+        <h2>初次访问人人影视时常问到的几点</h2>
+        <p>以下回答只针对内容组织与查找方式，不涉及具体文件获取。</p>
+      </div>
+      <ol class="row-list">
+        <li>
+          <span class="row-num">Q1</span>
+          <div>
+            <h3>为什么同一部剧有多个条目</h3>
+            <p>常见原因是字幕版本或画质版本不同，也可能是不同季被拆开归档。进入前看清标注，能避免重复查找。</p>
+          </div>
+        </li>
+        <li>
+          <span class="row-num">Q2</span>
+          <div>
+            <h3>更新信息以什么为准</h3>
+            <p>以条目内标注的集数与更新时间为准。连载剧集受播出安排影响，偶尔会出现延后，属正常情况。</p>
+          </div>
+        </li>
+        <li>
+          <span class="row-num">Q3</span>
+          <div>
+            <h3>字幕应该怎么选</h3>
+            <p>优先看译名是否与你熟悉的版本一致，再核对时间轴。双语字幕适合对照学习，中文字幕更偏向流畅阅读。</p>
+          </div>
+        </li>
+        <li>
+          <span class="row-num">Q4</span>
+          <div>
+            <h3>找不到想看的内容怎么办</h3>
+            <p>先换关键词，尝试用原文片名或简称；再按类型与年份缩小范围。人人影视相关内容覆盖面较广，多数条目可通过组合条件定位。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">人人影视<span>剧集 · 电影 · 字幕</span></div>
+      </div>
+      <nav class="footer-links" aria-label="页尾导航">
+        <a href="#top">首页</a>
+        <a href="#channels">内容栏目</a>
+        <a href="#guide">使用路径</a>
+        <a href="#search">站内查找</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      本页为人人影视主题信息页，整理剧集、电影与字幕内容的常见栏目与查找路径，不存储、不分发任何影视文件。作品版权归各自权利人所有，请通过合法渠道观看，并遵守所在地区法律法规。
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('q');
+  var result = document.getElementById('result');
+  var map = [
+    {k:['剧','剧集','季','集'], t:'剧集栏目：海外剧集按季归档，条目内标注集数与更新节奏，适合连续追看。'},
+    {k:['电影','片','长片'], t:'电影栏目：以单片为条目，涵盖剧情、科幻、悬疑等常见类型，可按类型挑选。'},
+    {k:['字幕','中字','双语'], t:'字幕栏目：中文字幕、双语字幕与校对版本并列，进入条目前先核对版本与时间轴。'},
+    {k:['更新','追','连载'], t:'更新与追看：连载剧集按播出周期更新，列表标注集数，可据此安排下一次追看。'},
+    {k:['类型','榜单','推荐','评分'], t:'类型与榜单：按类型、年份与热度整理条目，适合初次访问时快速定位。'}
+  ];
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = (input.value || '').trim();
+    if(!v){ result.textContent = '请输入关键词，例如“剧集”“电影”“字幕”。'; return; }
+    var hit = map.find(function(m){ return m.k.some(function(k){ return v.indexOf(k) > -1; }); });
+    result.textContent = hit ? hit.t : '未在本页内容中找到“' + v + '”的直接对应项，可尝试“剧集”“电影”“字幕”“更新”等关键词。';
+  });
+})();
+</script>
+
+</body>
+</html>
